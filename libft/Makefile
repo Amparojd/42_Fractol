@@ -9,7 +9,7 @@ ft_putchar_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 ft_strchr.c ft_strdup.c ft_strlcat.c ft_strlcpy.c ft_strjoin.c \
 ft_strlen.c ft_strncmp.c ft_substr.c ft_strnstr.c ft_striteri.c \
 ft_strtrim.c ft_strrchr.c ft_tolower.c ft_toupper.c ft_split.c \
-ft_words.c ft_printf.c ft_numbers.c
+ft_words.c ft_printf.c ft_numbers.c ft_strcmp.c ft_strtodouble.c
 
 
 OBJ_FILES = $(SRCS:.c=.o)

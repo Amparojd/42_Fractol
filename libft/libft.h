@@ -67,5 +67,8 @@ void		ft_pthexa(unsigned long long num, char *base, int *length);
 void		ft_unsigned_int(unsigned int num, int *length);
 void		ft_check_type(va_list args, const char str, int *length);
 int			ft_printf(const char *str, ...);
+int			ft_strcmp(const char *s1, const char *s2);
+double		ft_strtodouble(char *s);
+double		ft_strtod_helper(char *s, double nbr, int negative, int i);
 
 #endif

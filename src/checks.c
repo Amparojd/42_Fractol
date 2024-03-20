@@ -16,9 +16,9 @@ int	arg_check(char *argv_1, char *argv_2, char *argv_3)
 {
 	if (!ft_strcmp(argv_1, "julia") && argv_2 != NULL && argv_3 != NULL)
 	{
-		if (ft_stringToDouble(argv_2) && ft_stringToDouble(argv_3)
-			&& ft_stringToDouble(argv_2) >= -2.0 && ft_stringToDouble(argv_2) <= 2.0
-			&& ft_stringToDouble(argv_3) >= -2.0 && ft_stringToDouble(argv_3) <= 2.0)
+		if (ft_strtodouble(argv_2) && ft_strtodouble(argv_3)
+			&& ft_strtodouble(argv_2) >= -2.0 && ft_strtodouble(argv_2) <= 2.0
+			&& ft_strtodouble(argv_3) >= -2.0 && ft_strtodouble(argv_3) <= 2.0)
 			return (1);
 	}
 	if (!ft_strcmp(argv_1, "julia_1") || !ft_strcmp(argv_1, "julia_2")
@@ -35,8 +35,8 @@ int	arg_check(char *argv_1, char *argv_2, char *argv_3)
 void	julia_check(char *fractal_type, char *j_r, char *j_i, t_fractol *f)
 {
 	f->name = fractal_type;
-	f->julia_r = ft_stringToDouble(j_r);
-	f->julia_i = ft_stringToDouble(j_i);
+	f->julia_r = ft_strtodouble(j_r);
+	f->julia_i = ft_strtodouble(j_i);
 	julia(f);
 }
 

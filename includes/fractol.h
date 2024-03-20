@@ -66,7 +66,7 @@ typedef struct s_fractol
 /* Libft functions */
 
 //void		ft_bzero(void *str, size_t n);
-double		ft_stringToDouble(char *s);
+double		ft_strtodouble(char *s);
 double		ft_strtod_helper(char *s, double nbr, int negative, int i);
 int			ft_strcmp(const char *s1, const char *s2);
 //void		*ft_calloc(size_t nitems, size_t size);
