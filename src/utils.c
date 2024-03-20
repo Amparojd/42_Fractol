@@ -12,7 +12,7 @@
 
 #include "fractol.h"
 
-double	ft_strtod(char *s)
+double	ft_stringToDouble(char *s)
 {
 	double	nbr;
 	int		negative;
@@ -76,7 +76,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 	return (0);
 }
 
-void	my_mlx_putpixel(t_fractol *f, int x, int y, int color)
+void	ft_drawPixel(t_fractol *f, int x, int y, int color)
 {
 	char	*dst;
 
@@ -84,7 +84,7 @@ void	my_mlx_putpixel(t_fractol *f, int x, int y, int color)
 	*(unsigned int *)dst = color;
 }
 
-int	exit_when_close(int keycode, t_fractol *f)
+int	close_window(int keycode, t_fractol *f)
 {
 	if (keycode == ESC_KEY)
 	{

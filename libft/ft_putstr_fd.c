@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils2.c                                           :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ampjimen <ampjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/17 17:39:32 by ampjimen          #+#    #+#             */
-/*   Updated: 2024/03/17 17:39:32 by ampjimen         ###   ########.fr       */
+/*   Created: 2023/09/18 16:52:31 by ampjimen          #+#    #+#             */
+/*   Updated: 2023/09/18 19:38:37 by ampjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "libft.h"
 
-void	*ft_calloc(size_t nitems, size_t size)
+void	ft_putstr_fd(char *s, int fd)
 {
-	void	*ptr;
-
-	ptr = malloc(nitems * size);
-	if (!ptr)
-		return (NULL);
-	ft_bzero(ptr, (nitems * size));
-	return (ptr);
-}
-
-void	ft_bzero(void *str, size_t n)
-{
-	unsigned char	*s;
-
-	s = (unsigned char *)str;
-	while (n--)
+	while (*s)
 	{
-		*s++ = 0;
+		ft_putchar_fd(*s, fd);
+		s++;
 	}
-	str = s;
 }
+
+/*int main(void)
+{
+    char *s = "hola";
+    
+   ft_putstr_fd(s, 1);
+}*/

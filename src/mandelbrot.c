@@ -43,9 +43,9 @@ void	mandelbrot(t_fractol *f)
 			f->re = 0;
 			f->im = 0;
 			if (iterate_mandelbrot(f) >= ITERATION)
-				my_mlx_putpixel(f, f->i, f->j, 0xFF0000);
+				ft_drawPixel(f, f->i, f->j, 0xFF0000);
 			else
-				my_mlx_putpixel(f, f->i, f->j, f->color \
+				ft_drawPixel(f, f->i, f->j, f->color \
 				* iterate_mandelbrot(f));
 			f->j++;
 		}

@@ -43,9 +43,9 @@ void	burning_ship(t_fractol *f)
 			f->re = 0;
 			f->im = 0;
 			if (iterate_ship(f) >= ITERATION)
-				my_mlx_putpixel(f, f->i, f->j, 0x000000);
+				ft_drawPixel(f, f->i, f->j, 0x000000);
 			else
-				my_mlx_putpixel(f, f->i, f->j, f->color \
+				ft_drawPixel(f, f->i, f->j, f->color \
 				* iterate_ship(f));
 			f->j++;
 		}

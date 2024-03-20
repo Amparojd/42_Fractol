@@ -38,6 +38,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <mlx.h>
+# include "../libft/libft.h"
 
 typedef struct s_fractol
 {
@@ -64,11 +65,11 @@ typedef struct s_fractol
 
 /* Libft functions */
 
-void		ft_bzero(void *str, size_t n);
-double		ft_strtod(char *s);
+//void		ft_bzero(void *str, size_t n);
+double		ft_stringToDouble(char *s);
 double		ft_strtod_helper(char *s, double nbr, int negative, int i);
 int			ft_strcmp(const char *s1, const char *s2);
-void		*ft_calloc(size_t nitems, size_t size);
+//void		*ft_calloc(size_t nitems, size_t size);
 
 /* Fractals */
 
@@ -91,9 +92,9 @@ int			arrow_move(int keycode, t_fractol *f);
 
 void		check_fractal(char *fractal_type, t_fractol *f);
 void		input_help(void);
-void		my_mlx_putpixel(t_fractol *f, int x, int y, int color);
+void		ft_drawPixel(t_fractol *f, int x, int y, int color);
 void		julia_check(char *fractal_type, char *j_r, char *j_i, t_fractol *f);
 int			arg_check(char *argv_1, char *argv_2, char *argv_3);
-int			exit_when_close(int keycode, t_fractol *f);
+int			close_window(int keycode, t_fractol *f);
 
 #endif

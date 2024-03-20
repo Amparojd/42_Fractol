@@ -20,7 +20,7 @@ int	key_hooks(int keycode, t_fractol *f)
 	if (keycode == A_KEY || keycode == S_KEY)
 		change_color(keycode, f);
 	if (keycode == ESC_KEY)
-		exit_when_close(keycode, f);
+		close_window(keycode, f);
 	return (0);
 }
 

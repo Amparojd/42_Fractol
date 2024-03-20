@@ -16,7 +16,7 @@ void	hooks(t_fractol *f)
 {
 	mlx_mouse_hook(f->win_ptr, zoom, f);
 	mlx_key_hook(f->win_ptr, key_hooks, f);
-	mlx_hook(f->win_ptr, 17, 0, exit_when_close, f);
+	mlx_hook(f->win_ptr, 17, 0, close_window, f);
 }
 
 void	make_image(t_fractol *f)

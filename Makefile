@@ -10,60 +10,70 @@
 #                                                                              #
 # **************************************************************************** #
 
-#Program name
-NAME	= fractol
+# Program name
+NAME    = fractol
 
-#Compiler
-CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -fsanitize=address -g
-MFLAGS = -L ${MLX_PATH} -lmlx -lXext -lX11 -lm -lbsd
+# Sources
+SRC_PATH    = src/
+SRC         = main.c mandelbrot.c utils.c help.c \
+              burning_ship.c julia.c checks.c hooks.c
+SRCS        = $(addprefix $(SRC_PATH), $(SRC))
 
-#Minilibx
-MLX_PATH	= minilibx-linux/
-MLX_NAME	= libmlx.a
-MLX			= $(MLX_PATH)$(MLX_NAME)
+# Compiler
+CC      = gcc
+CFLAGS  = -Wall -Wextra -Werror -fsanitize=address -g
+MFLAGS  = -L ${MLX_PATH} -lmlx -lXext -lX11 -lm -lbsd
 
-#Includes
-INC			=	-I ./includes/\
-				-I ./minilibx-linux/
+# Minilibx
+MLX_PATH    = minilibx-linux/
+MLX_NAME    = libmlx.a
+MLX         = $(MLX_PATH)$(MLX_NAME)
 
-#Sources
-SRC_PATH	=	src/
-SRC			= main.c mandelbrot.c utils.c utils2.c help.c  \
-				burning_ship.c julia.c checks.c hooks.c
-SRCS		= $(addprefix $(SRC_PATH), $(SRC))
+# Includes
+INC         = -I./includes/ -I./minilibx-linux/
 
-#Objects
-OBJ_PATH	= obj/
-OBJ			= $(SRC:.c=.o)
-OBJS		= $(addprefix $(OBJ_PATH), $(OBJ))
+# Libft
+LIBFT_DIR   = ./libft/
+LIBFT_A     = libft.a
+LIBFT       = $(LIBFT_DIR)$(LIBFT_A)
+
+# Objects
+OBJ_PATH    = obj/
+OBJ         = $(SRC:.c=.o)
+OBJS        = $(addprefix $(OBJ_PATH), $(OBJ))
 
 all: $(MLX) $(NAME)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
-	@$(CC) $(CFLAGS) -c $< -o $@ $(INC)
-
-$(OBJS): $(OBJ_PATH)
-
-$(OBJ_PATH):
-	@mkdir $(OBJ_PATH)
+	@mkdir -p $(OBJ_PATH)
+	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
+	@clear
 
 $(MLX):
-	@make -sC $(MLX_PATH)
+	@make -C $(MLX_PATH)
+	@clear
 
 $(NAME): $(OBJS)
-	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(MLX) $(INC) -o $(NAME) $(MFLAGS)
-	@echo "\033[32mFract-ol: OK!"
+	@clear
+	@make -C $(LIBFT_DIR)
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(MLX) $(LIBFT) $(MFLAGS)
+	@clear
+	@echo "\033[1;32m🌀 All fractals are ready to be visualized! 🖼️🌀\033[0m"
 
 clean:
-	@echo "\033[33mObjet files: \033[31mDeleted!"
+	@clear
 	@rm -rf $(OBJ_PATH)
-	@make clean -C $(MLX_PATH)
+	@make -C $(MLX_PATH) clean
+	@make -C $(LIBFT_DIR) clean
+	@clear
+	@echo "\033[1;33m✨ Object files have been successfully cleaned! ✨\033[0m"
 
 fclean: clean
-	@echo "\033[33mFract-ol: \033[31mDeleted!"
 	@rm -f $(NAME)
+	@make -C $(LIBFT_DIR) fclean
+	@clear
+	@echo "\033[1;33m✨ Executable and object files have been successfully cleaned! ✨\033[0m"
 
 re: fclean all
 
-.PHONY: all re clean fclean
+.PHONY: all clean fclean re
