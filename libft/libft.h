@@ -17,6 +17,8 @@
 # include <stdio.h>
 # include <string.h>
 # include <stdlib.h>
+# include <stdarg.h>
+# include <stddef.h>
 
 typedef struct s_list
 {
@@ -58,5 +60,12 @@ void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
+void		ft_putchar_length(char c, int *length);
+void		ft_putstr(char *s, int *length);
+void		ft_ptnumber(int n, int *length);
+void		ft_pthexa(unsigned long long num, char *base, int *length);
+void		ft_unsigned_int(unsigned int num, int *length);
+void		ft_check_type(va_list args, const char str, int *length);
+int			ft_printf(const char *str, ...);
 
 #endif

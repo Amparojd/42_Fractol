@@ -14,21 +14,21 @@
 
 void	input_help(void)
 {
-	printf(" _______________________________\n");
-	printf("|                               |\n");
-	printf("| Use: ./fractol [fractal_name] |\n");
-	printf("|_______________________________|\n");
-	printf("|      Available fractals:      |\n");
-	printf("|                               |\n");
-	printf("|        [mandelbrot]           |\n");
-	printf("|        [julia_1]              |\n");
-	printf("|        [julia_2]              |\n");
-	printf("|        [julia_3]              |\n");
-	printf("|        [burning_ship]         |\n");
-	printf("|        *[julia]               |\n");
-	printf("|_______________________________|\n\n");
-	printf(" *If you choose [julia]\n");
-	printf(" Enter the real and imaginary parts between -2 and 2\n");
-	printf(" Example:    ./fractol julia -0.2321 -0.835\n\n");
+	ft_printf(" _______________________________\n");
+	ft_printf("|                               |\n");
+	ft_printf("| Use: ./fractol [fractal_name] |\n");
+	ft_printf("|_______________________________|\n");
+	ft_printf("|      Available fractals:      |\n");
+	ft_printf("|                               |\n");
+	ft_printf("|        [mandelbrot]           |\n");
+	ft_printf("|        [julia_1]              |\n");
+	ft_printf("|        [julia_2]              |\n");
+	ft_printf("|        [julia_3]              |\n");
+	ft_printf("|        [burning_ship]         |\n");
+	ft_printf("|        *[julia]               |\n");
+	ft_printf("|_______________________________|\n\n");
+	ft_printf(" *If you choose [julia]\n");
+	ft_printf(" Enter the real and imaginary parts between -2 and 2\n");
+	ft_printf(" Example:    ./fractol julia -0.2321 -0.835\n\n");
 	exit(EXIT_FAILURE);
 }
