@@ -18,6 +18,7 @@
             </ul>
         <h2 id="intro">Introducción</h2>
         <p>Fract-ol es un proyecto que consiste en desarrollar un programa interactivo en C que permite visualizar fractales en tiempo real. Los fractales más comunes a representar son el conjunto de Mandelbrot y el conjunto de Julia. Como parte del bonus he añadido también el fractal "Burning ship". </p>
+        <p>Para poder entender el funcionamiento de los fractales, es bastante necesario tener claro qué son los números complejos, números reales y números imaginarios</p>
     <p>El programa debe ofrecer una interfaz gráfica que permita al usuario explorar y manipular estos fractales, pudiendo ajustar parámetros como la posición en el plano complejo, el zoom, el esquema de colores, entre otros.</p>
         <br>
         <h2 id="instalacion">Instalación</h2>
