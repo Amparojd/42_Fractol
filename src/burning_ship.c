@@ -46,7 +46,7 @@ void	burning_ship(t_fractol *f)
 				ft_draw_pixel(f, f->i, f->j, 0x000000);
 			else
 				ft_draw_pixel(f, f->i, f->j, f->color \
-				* iterate_ship(f));
+				+ ((iterate_ship(f) * 0x1111)));
 			f->j++;
 		}
 		f->i++;

@@ -46,7 +46,7 @@ void	mandelbrot(t_fractol *f)
 				ft_draw_pixel(f, f->i, f->j, 0x000000);
 			else
 				ft_draw_pixel(f, f->i, f->j, f->color \
-				+ (iterate_mandelbrot(f) * 50));
+				+ (iterate_mandelbrot(f) * 500));
 			f->j++;
 		}
 		f->i++;
