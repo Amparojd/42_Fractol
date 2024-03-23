@@ -21,16 +21,20 @@ SRCS        = $(addprefix $(SRC_PATH), $(SRC))
 
 # Compiler
 CC      = gcc
-CFLAGS  = -Wall -Wextra -Werror -fsanitize=address -g
-MFLAGS  = -L ${MLX_PATH} -lmlx -lXext -lX11 -lm -lbsd
+CFLAGS  = -Wall -Wextra -Werror -g
+#MFLAGS  = -L ${MLX_PATH} -lmlx -lXext -lX11 -lm -lbsd
+
 
 # Minilibx
-MLX_PATH    = minilibx-linux/
+#MLX_PATH    = minilibx-linux/
+MLX_PATH	= minilibx/
 MLX_NAME    = libmlx.a
 MLX         = $(MLX_PATH)$(MLX_NAME)
 
 # Includes
-INC         = -I./includes/ -I./minilibx-linux/
+#INC         = -I./includes/ -I./minilibx-linux/
+INC			=	-I ./includes/\
+				-I ./minilibx/
 
 # Libft
 LIBFT_DIR   = ./libft/
@@ -56,7 +60,8 @@ $(MLX):
 $(NAME): $(OBJS)
 	@clear
 	@make -C $(LIBFT_DIR)
-	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(MLX) $(LIBFT) $(MFLAGS)
+#@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(MLX) $(LIBFT) $(MFLAGS)
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(MLX) $(INC) $(LIBFT) -ldl -lmlx -framework OpenGL -framework AppKit -lz
 	@clear
 	@echo "\033[1;32m🌀 All fractals are ready to be visualized! 🖼️🌀\033[0m"
 

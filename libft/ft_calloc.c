@@ -37,4 +37,3 @@ void	*ft_calloc(size_t nitems, size_t size)
 	while(*a)
 		(write(1, a, 1), a++);
 }*/
-

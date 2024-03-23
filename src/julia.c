@@ -65,9 +65,9 @@ void	julia(t_fractol *f)
 			f->re = (f->i - X_AXIS / 2) * (f->zoom / X_AXIS) + f->x;
 			f->im = (f->j - Y_AXIS / 2) * (f->zoom / Y_AXIS) + f->y;
 			if (iterate_julia(f) >= ITERATION)
-				ft_drawPixel(f, f->i, f->j, 0x000000);
+				ft_draw_pixel(f, f->i, f->j, 0x000000);
 			else
-				ft_drawPixel(f, f->i, f->j, f->color \
+				ft_draw_pixel(f, f->i, f->j, f->color \
 				* iterate_julia(f));
 			f->j++;
 		}

@@ -12,7 +12,7 @@
 
 #include "fractol.h"
 
-void	ft_drawPixel(t_fractol *f, int x, int y, int color)
+void	ft_draw_pixel(t_fractol *f, int x, int y, int color)
 {
 	char	*dst;
 
