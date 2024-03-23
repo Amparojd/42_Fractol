@@ -46,9 +46,9 @@ int	zoom(int keycode, int x, int y, t_fractol *f)
 int	change_color(int keycode, t_fractol *f)
 {
 	if (keycode == A_KEY)
-		f->color += 0x01FFFF;
+		f->color += 0x001111;
 	if (keycode == S_KEY)
-		f->color -= 0x01FFFF;
+		f->color -= 0x001111;
 	if (!ft_strcmp(f->name, "julia"))
 		julia(f);
 	else

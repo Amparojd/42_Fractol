@@ -1,2 +1,0 @@
-*el tipo double: se utiliza para manejar decimales de una forma más precisa que "float".
-

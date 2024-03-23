@@ -23,8 +23,8 @@
 
 # define X_AXIS 600
 # define Y_AXIS 600
-# define COLOR 0x4B0082
-# define ITERATION 70//details in fractals setss
+#define COLOR 0x8A2BE2
+# define ITERATION 200//details in fractals setss
 
 /* Keys */
 
