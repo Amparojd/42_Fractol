@@ -13,7 +13,7 @@
             <ul>
                 <li><a href="#intro">Introducción</a></li>
                 <li><a href="#instalacion">Instalación</a></li>
-                <li><a href="#tester">Pruebas</a></li>
+                <li><a href="#tester">Documéntate</a></li>
                 <!-- Agrega más enlaces a otras secciones si es necesario -->
             </ul>
         <h2 id="intro">Introducción</h2>
@@ -23,11 +23,20 @@
         <br>
         <h2 id="instalacion">Instalación</h2>
         <p>Clona el repositorio:</p>
-        <pre><code></code></pre>
+        <pre><code>git@github.com:Amparojd/42_Fractol.git</code></pre>
         <br>
-        <p>Una vez dentro del directorio clonado, escribe "make" en terminal. Con esto se compilarán todos los archivos y se creará un ejecutable llamado "fractol".</p>
+        <p>Una vez clonado, accede al nuevo directorio y compila</p>
+        <pre><code>make</code></pre>
+        <p>Se debió crear un ejecutable llamado <code>fractol</code>, por lo que, puedes añadir otro argumento más para poder iniciar cualquier fractal disponible</p>
+        <pre><code>./fractol julia_1</code></pre>
+        <pre><code>./fractol julia_2</code></pre>
+        <pre><code>./fractol julia_3</code></pre>
+        <pre><code>./fractol mandelbrot</code></pre>
+        <pre><code>./fractol burning_ship</code></pre>
         <br>
-        
+        <h3>¡A disfrutar!</h3>
+        <h2 id="testet">Documéntate</h2>
+        <p>Fract-ol es un proyecto muy bonito y colorido, pero no es nada sencillo. Deberás entender qué son los números complejos, los reales y los imaginarios</p>
  </div>
 </body>
 </html>
